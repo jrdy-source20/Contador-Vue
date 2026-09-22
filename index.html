@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div id="app">
         <h1>Contador con Vue 3</h1>
-        <p>{{ contador }}</p>
-        <button @click="incrementar">Incrementar</button>
-        <button @click="decrementar" :disabled="contador === 0">Decrementar</button>
+        <p>Contador: {{ counter }}</p>
+        <button @click="increment">Incrementar</button>
+        <button @click="decrement" :disabled="counter === 0">Decrementar</button>
     </div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    counter: 0,
+                };
+            },
+            methods: {
+                increment(){
+                    this.counter++;
+                },
+                decrement(){
+                    if (this.counter>0){
+                        this.counter--;
+                    }
+                },
+            },
+        });
+        app.mount('#app');
+    </script>
 </body>
 </html>
