@@ -29,6 +29,10 @@
             background-color: white;
         }
 
+        h1, p{
+            color: #000;
+        }
+
         button{
             margin: 5px;
             padding: 10px 15px;
@@ -36,7 +40,7 @@
             cursor: pointer;
             border: none;
             border-radius: 4px;
-            background-color: #007bff;
+            background-color: #03A6A1;
             color: white;
             transition: background-color 0.3s ease;
         }
@@ -45,16 +49,16 @@
             background-color: #0056b3;
         }
 
-        button:disabled{
+        /*button:disabled{
             background-color: #ccc;
             cursor: not-allowed;
-        }
+        }*/
     </style>
     <div id="app">
         <h1>Contador con Vue 3</h1>
         <p>Contador: {{ counter }}</p>
         <button @click="increment">Incrementar</button>
-        <button @click="decrement" :disabled="counter === 0">Decrementar</button>
+        <button @click="decrement">Decrementar</button>
     </div>
     <script>
         const app = Vue.createApp({
@@ -68,9 +72,7 @@
                     this.counter++;
                 },
                 decrement(){
-                    if (this.counter>0){
-                        this.counter--;
-                    }
+                    this.counter--;
                 },
             },
         });
