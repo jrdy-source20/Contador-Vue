@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contador Vue 3</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
 </head>
 <body>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        #app{
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+
+        button{
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover{
+            background-color: #0056b3;
+        }
+
+        button:disabled{
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
     <div id="app">
         <h1>Contador con Vue 3</h1>
         <p>Contador: {{ counter }}</p>
